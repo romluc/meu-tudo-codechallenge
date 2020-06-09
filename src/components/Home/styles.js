@@ -52,7 +52,7 @@ export const Paragraph = styled.div`
     font-size: 16px;
     color: #3c4954;
     height: 87px;
-    padding: 8px;
+    padding: 16px;
   }
 `;
 
@@ -61,8 +61,8 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   height: 52px;
-  width: 100%;
-  margin: 24px 24px 40px;
+  width: calc(100% - 24px);
+  margin: 24px 0 40px;
   font-size: 15px;
   border-radius: 12px;
   background-color: #3c4954;
