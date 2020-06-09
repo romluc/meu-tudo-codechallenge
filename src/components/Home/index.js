@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Container,
   PersonImage,
@@ -22,7 +23,9 @@ const Home = () => {
           </p>
         </Paragraph>
         <Button>
-          <p>Get Started</p>
+          <Link to="/cases">
+            <p>Get Started</p>
+          </Link>
         </Button>
       </Container>
     </div>
