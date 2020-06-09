@@ -1,10 +1,15 @@
 import React from 'react';
+import Header from '../Header';
+import { Chart, ListTypesCases, ListTypesPatients } from './styles';
 
 const Cases = () => {
   return (
-    <div>
-      <h1>Cases</h1>
-    </div>
+    <>
+      <Header />
+      <Chart />
+      <ListTypesCases />
+      <ListTypesPatients />
+    </>
   );
 };
 

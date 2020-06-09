@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import personImg from '../../assets/bg-person.png';
 import virusImg from '../../assets/bg-virus.png';
 
+import { Link } from 'react-router-dom';
+
 export const Container = styled.div`
   background-color: #fff;
   height: 100vh;
@@ -56,7 +58,7 @@ export const Paragraph = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import {
   Container,
   PersonImage,
   VirusImage,
   Title,
   Paragraph,
-  Button,
+  StyledLink,
 } from './styles';
 
 const Home = () => {
@@ -22,11 +22,9 @@ const Home = () => {
             taking appropriate precautions.
           </p>
         </Paragraph>
-        <Button>
-          <Link to="/cases">
-            <p>Get Started</p>
-          </Link>
-        </Button>
+        <StyledLink to="/cases">
+          <p>Get Started</p>
+        </StyledLink>
       </Container>
     </div>
   );
