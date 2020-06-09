@@ -1,11 +1,19 @@
 import React from 'react';
-import { Container, Image, Title, Paragraph, Button } from './styles';
+import {
+  Container,
+  PersonImage,
+  VirusImage,
+  Title,
+  Paragraph,
+  Button,
+} from './styles';
 
 const Home = () => {
   return (
     <div>
       <Container>
-        <Image />
+        <VirusImage />
+        <PersonImage />
         <Title>Covid-19</Title>
         <Paragraph>
           <p>

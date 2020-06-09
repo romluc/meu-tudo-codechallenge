@@ -9,6 +9,7 @@ export default createGlobalStyle`
   }
   body {
     -webkit-font-smoothing: antialiased;
+  
   }
   body, input, button {
     font-family: 'Roboto', sans-serif;
@@ -16,7 +17,6 @@ export default createGlobalStyle`
   #root {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 40px;
   }
   button {
     cursor: pointer;
