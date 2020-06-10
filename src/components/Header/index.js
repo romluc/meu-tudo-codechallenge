@@ -21,9 +21,9 @@ const Header = () => {
       <StatusBar>
         <span>{time}</span>
         <div>
-          <i class="fas fa-signal"></i>
-          <i class="fas fa-wifi"></i>
-          <i class="fas fa-battery-three-quarters"></i>
+          <i className="fas fa-signal"></i>
+          <i className="fas fa-wifi"></i>
+          <i className="fas fa-battery-three-quarters"></i>
         </div>
       </StatusBar>
       <MenuBar>
