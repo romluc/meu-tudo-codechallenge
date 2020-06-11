@@ -6,34 +6,26 @@
 
 ## Requirements
 
-[ ] Três telas do link, mobile first
-[ ] Seguir o mais fidedignamente possível o layout proposto.
-[ ] Requisição para alguma API de dados do Covid da sua escolha e preencher os resultados com base no resultado da requisição.
+[x] Três telas do link, mobile first
+[x] Seguir o mais fidedignamente possível o layout proposto.
+[x] Requisição para alguma API de dados do Covid da sua escolha e preencher os resultados com base no resultado da requisição. => Os dados foram obtidos da api `COVID-19 global data (que obtem os dados da Johns Hopkins University): https://covid19.mathdro.id`
 
 ## Techs used
 
-[ ] Styling with styled-components
-[ ] Routing with react-router-dom
-
-A navegabilidade da aplicação deve funcionar (pode ser client-side ou mudança de arquivos)
-
-O que será analisado (por ordem de prioridade):
-
-[ ] Fidelidade ao layout proposto
-[ ] Boa estrutura e código de CSS/LESS/SASS
-[ ] Utilização correta de HTML semântico
-[ ] Reuso de código - Componentização
-[ ] Organização do código
-[ ] Velocidade de carregamento
+- Estilizacao e componentizacao com styled-components
+- Navegabilidade com react-router-dom
 
 ## Plus Features
 
-[ ] Usar React
-[ ] Usar Next.js
-[ ] Usar Styled-components
-[ ] Hospedar a aplicação em algum local (heroku, aws, etc)
-[ ] Fazer de maneira legal a versão web-desktop
-[ ] Fizer a troca de países - (atualizando os dados)
+[x] ReactJS
+[x] Usar Styled-components
+[x] Hospedar a aplicação em algum local
+[ ] Fazer de maneira legal a versão web-desktop - parcialmente, visto que a responsividade está preservada por usar flexbox em quase todos os elementos (como é feito no React Native)
+
+## Futuras melhorias
+
+[ ] SSR com Next.js
+[ ] Terminar a troca de países - A parte da obtenção dos dados já está implementada, faltando apenas o tratamento desses dados para a exibição (API nao fornece: as bandeiras de todos, os numeros por perfil de paciente (por isso a secao em que temos os casos por Male, female and children está hard-coded')
 
 ## Submission
 
