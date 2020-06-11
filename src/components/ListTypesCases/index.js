@@ -1,22 +1,23 @@
 import React from 'react';
+import CountUp from 'react-countup';
 import { Container, ListItem } from './styles';
 
 const ListTypesCases = ({
-  dataToRender: { confirmed, recovered, deaths, active },
+  dataToRender: { active, recovered, deaths },
+  colors,
 }) => {
-  const { labels } = data;
-  const { data, backgroundColor } = data.datasets[0];
-  console.log(data);
+  const types = ['Active Cases', 'Discharges', 'Deaths'];
+  const dataFromTypes = [active, recovered, deaths];
   return (
     <Container>
       <ul>
-        {labels.map((label, i) => (
-          <ListItem key={label}>
+        {colors.map((color, i) => (
+          <ListItem key={i}>
             <div>
-              <span style={{ backgroundColor: `${backgroundColor[i]}` }} />
-              <p>{label}</p>
+              <span style={{ backgroundColor: `${color}` }} />
+              <p>{types[i]}</p>
             </div>
-            <p>{data[i]}</p>
+            <p>{dataFromTypes[i]}</p>
           </ListItem>
         ))}
       </ul>

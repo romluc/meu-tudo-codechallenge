@@ -28,9 +28,9 @@ const Cases = () => {
       setLoading(true);
       const fetchedData = await fetchData();
       setData(fetchedData);
+      setLoading(false);
     };
     callFetchData();
-    setLoading(false);
   }, []);
 
   return (
@@ -38,7 +38,7 @@ const Cases = () => {
       <Header />
       {loading && <Loading />}
       <DataChart dataToRender={data} colors={colors} />
-      {/* <ListTypesCases dataToRender={data} colors={colors}/> */}
+      <ListTypesCases dataToRender={data} colors={colors} />
       <ListTypesPatients />
       <Indicator />
     </Container>

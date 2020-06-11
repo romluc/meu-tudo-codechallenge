@@ -50,7 +50,7 @@ const Prevention = () => {
           <h3>Dry Cough</h3>
           <p>
             The cough to look out for is a new, continuous dry cough. This means
-            coughing a lot for more
+            coughing a lot for more...
           </p>
         </div>
       </Rectangle>
@@ -59,7 +59,7 @@ const Prevention = () => {
           <h3>Fever</h3>
           <p>
             You have a fever if your temperature is above 37.8°C. This can make
-            you feel warm,
+            you feel warm...
           </p>
         </div>
         <img src={imgRight} alt="Person coughing" />

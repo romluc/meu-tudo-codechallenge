@@ -10,7 +10,7 @@ export const Grid = styled.div`
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
-  margin: 20px;
+  margin: 32px 20px 25px;
 `;
 export const GridItem = styled.div`
   display: flex;
@@ -36,6 +36,7 @@ export const GridItem = styled.div`
     font-size: 13px;
     font-weight: 500;
     color: #3c4954;
+    margin-top: 5px;
   }
 `;
 

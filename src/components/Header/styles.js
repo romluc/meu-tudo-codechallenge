@@ -57,7 +57,7 @@ export const Navbar = styled.ul`
   align-items: center;
   list-style: none;
   height: 44px;
-  margin: 8px 0;
+  margin: 15px 0;
 
   li {
     display: flex;

@@ -13,7 +13,8 @@ Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
     let width = chart.width;
     let height = chart.height;
 
-    ctx.font = 30 + 'px Roboto';
+    ctx.font = '500 30px Roboto, sans-serif';
+    ctx.fontWeight = 'bold';
     ctx.fillStyle = '#3C4954';
     ctx.textBaseline = 'middle';
 
@@ -24,7 +25,7 @@ Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
     ctx.fillText(text, textX, textY);
 
     // Draw subtitle for the number
-    ctx.font = 16 + 'px Roboto';
+    ctx.font = '500 16px Roboto, sans-serif';
     ctx.fillStyle = '#78849E';
     ctx.textBaseline = 'middle';
 
