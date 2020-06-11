@@ -15,9 +15,10 @@ export const fetchData = async (country) => {
     } = await axios.get(dynamicUrl);
 
     return {
-      confirmed,
-      recovered,
-      deaths,
+      confirmed: confirmed.value,
+      recovered: recovered.value,
+      deaths: deaths.value,
+      active: confirmed.value - recovered.value - deaths.value,
     };
   } catch (error) {
     console.log(error);

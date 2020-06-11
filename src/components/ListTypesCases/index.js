@@ -1,10 +1,12 @@
 import React from 'react';
 import { Container, ListItem } from './styles';
 
-const ListTypesCases = ({ dataToRender }) => {
-  const { labels } = dataToRender;
-  const { data, backgroundColor } = dataToRender.datasets[0];
-  console.log(dataToRender);
+const ListTypesCases = ({
+  dataToRender: { confirmed, recovered, deaths, active },
+}) => {
+  const { labels } = data;
+  const { data, backgroundColor } = data.datasets[0];
+  console.log(data);
   return (
     <Container>
       <ul>

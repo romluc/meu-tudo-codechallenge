@@ -13,11 +13,11 @@ Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
     let width = chart.width;
     let height = chart.height;
 
-    ctx.font = 32 + 'px Roboto';
+    ctx.font = 30 + 'px Roboto';
     ctx.fillStyle = '#3C4954';
     ctx.textBaseline = 'middle';
 
-    let text = chart.config.data.text,
+    let text = chart.config.data.text || 'Loading...',
       textX = Math.round((width - ctx.measureText(text).width) / 2),
       textY = height / 2 - 10;
 
@@ -36,27 +36,49 @@ Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
   },
 });
 
-const options = {
-  cutoutPercentage: 80,
-  legend: {
-    display: false,
-  },
-  plugins: {
-    datalabels: {
-      color: '#3C4954',
-      font: {
-        size: 20,
-        weight: 500,
+const DataChart = ({
+  dataToRender: { confirmed, recovered, deaths, active },
+  colors,
+}) => {
+  console.log(colors);
+  const data = {
+    labels: ['Active Cases', 'Discharges', 'Deaths'],
+    datasets: [
+      {
+        data: [
+          ((active / confirmed) * 100).toFixed(2),
+          ((recovered / confirmed) * 100).toFixed(2),
+          ((deaths / confirmed) * 100).toFixed(2),
+        ],
+        backgroundColor: [colors[0], colors[1], colors[2]],
+        borderWidth: 0,
       },
-      align: 'end',
-      offset: 10,
+    ],
+    text: confirmed,
+    text2: 'Total Cases',
+  };
+
+  const options = {
+    cutoutPercentage: 80,
+    legend: {
+      display: false,
     },
-  },
-};
-const DataChart = ({ dataToRender }) => {
+    plugins: {
+      datalabels: {
+        color: '#3C4954',
+        font: {
+          size: 20,
+          weight: 500,
+        },
+        align: 'end',
+        offset: 10,
+      },
+    },
+  };
+
   return (
     <Container>
-      <Doughnut data={dataToRender} options={options} />
+      <Doughnut data={data} options={options} />
     </Container>
   );
 };

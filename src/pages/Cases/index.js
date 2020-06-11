@@ -7,28 +7,9 @@ import ListTypesPatients from '../../components/ListTypesPatients';
 import Indicator from '../../components/Indicator';
 import Loading from '../../components/Loading';
 
-import { Container } from './styles';
-
 import { fetchData } from '../../api';
 
-const formatCenterText = () => {
-  const randomText = parseInt(Math.random() * (10000000 - 1000000) + 1000000);
-
-  return randomText;
-};
-
-const dataToRender = {
-  labels: ['Active Cases', 'Discharges', 'Deaths'],
-  datasets: [
-    {
-      data: [60, 25, 15],
-      backgroundColor: ['#FFC259', '#FF5959', '#55E13A'],
-      borderWidth: 0,
-    },
-  ],
-  text: formatCenterText(),
-  text2: 'Total Cases',
-};
+import { Container } from './styles';
 
 // const handleCountryChange = async (country) => {
 //   const fetchedData = await fetchData(country);
@@ -40,26 +21,24 @@ const Cases = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(false);
 
+  const colors = ['#FFC259', '#55E13A', '#FF5959'];
+
   useEffect(() => {
     const callFetchData = async () => {
       setLoading(true);
       const fetchedData = await fetchData();
-      setData({
-        data: fetchedData,
-        country: '',
-      });
-      setLoading(false);
+      setData(fetchedData);
     };
     callFetchData();
+    setLoading(false);
   }, []);
 
-  console.log(data);
   return (
     <Container>
       <Header />
       {loading && <Loading />}
-      <DataChart dataToRender={dataToRender} />
-      <ListTypesCases dataToRender={dataToRender} />
+      <DataChart dataToRender={data} colors={colors} />
+      {/* <ListTypesCases dataToRender={data} colors={colors}/> */}
       <ListTypesPatients />
       <Indicator />
     </Container>
