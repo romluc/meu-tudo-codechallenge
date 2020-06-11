@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Chart from '../../components/Chart';
 import ListTypesCases from '../../components/ListTypesCases';
 import ListTypesPatients from '../../components/ListTypesPatients';
-import Rectangle from '../../components/Rectangle';
+import Indicator from '../../components/Indicator';
 
 import { Container } from './styles';
 
@@ -48,7 +48,7 @@ const Cases = () => {
       <Chart dataToRender={dataToRender} />
       <ListTypesCases dataToRender={dataToRender} />
       <ListTypesPatients />
-      <Rectangle />
+      <Indicator />
     </Container>
   );
 };

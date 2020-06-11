@@ -18,7 +18,7 @@ export const Container = styled.div`
   }
 `;
 
-export const VirusImage = styled.image`
+export const VirusImage = styled.div`
   position: absolute;
   top: 30px;
   min-width: 316px;
@@ -28,7 +28,7 @@ export const VirusImage = styled.image`
   background-repeat: no-repeat;
 `;
 
-export const PersonImage = styled.image`
+export const PersonImage = styled.div`
   position: absolute;
   top: 141px;
   min-width: 240px;

@@ -52,7 +52,7 @@ const Header = () => {
           <a href="/prevention">Prevention</a>
         </li>
         <li>
-          <a href="/hospitals">Hospitals</a>
+          <a href="/">Hospitals</a>
         </li>
       </Navbar>
     </Container>

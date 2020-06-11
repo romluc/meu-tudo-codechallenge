@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from './styles';
 
-const Rectangle = () => {
+const Indicator = () => {
   return (
     <Container>
       <span />
@@ -9,4 +9,4 @@ const Rectangle = () => {
   );
 };
 
-export default Rectangle;
+export default Indicator;
