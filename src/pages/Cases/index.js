@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
 import Header from '../../components/Header';
-import Chart from '../../components/Chart';
+import DataChart from '../../components/DataChart';
 import ListTypesCases from '../../components/ListTypesCases';
 import ListTypesPatients from '../../components/ListTypesPatients';
 import Indicator from '../../components/Indicator';
+import Loading from '../../components/Loading';
 
 import { Container } from './styles';
 
 import { fetchData } from '../../api';
+
+const formatCenterText = () => {
+  const randomText = parseInt(Math.random() * (10000000 - 1000000) + 1000000);
+
+  return randomText;
+};
 
 const dataToRender = {
   labels: ['Active Cases', 'Discharges', 'Deaths'],
@@ -19,6 +26,8 @@ const dataToRender = {
       borderWidth: 0,
     },
   ],
+  text: formatCenterText(),
+  text2: 'Total Cases',
 };
 
 // const handleCountryChange = async (country) => {
@@ -28,24 +37,28 @@ const dataToRender = {
 // };
 
 const Cases = () => {
-  // const [data, setData] = useState({});
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   const callFetchData = async () => {
-  //     const fetchedData = await fetchData();
-  //     setData({
-  //       data: fetchedData,
-  //       country: '',
-  //     });
-  //   };
-  //   callFetchData();
-  // }, []);
+  useEffect(() => {
+    const callFetchData = async () => {
+      setLoading(true);
+      const fetchedData = await fetchData();
+      setData({
+        data: fetchedData,
+        country: '',
+      });
+      setLoading(false);
+    };
+    callFetchData();
+  }, []);
 
-  // console.log(data);
+  console.log(data);
   return (
     <Container>
       <Header />
-      <Chart dataToRender={dataToRender} />
+      {loading && <Loading />}
+      <DataChart dataToRender={dataToRender} />
       <ListTypesCases dataToRender={dataToRender} />
       <ListTypesPatients />
       <Indicator />

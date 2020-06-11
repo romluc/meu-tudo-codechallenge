@@ -11,7 +11,7 @@ import {
   Navbar,
 } from './styles';
 
-import flag from '../../assets/flag-round-250/flag-round-250.png';
+import globe from '../../assets/globe-32.png';
 import menu from '../../assets/menu/menu.png';
 import notification from '../../assets/notification/notification.png';
 
@@ -34,13 +34,15 @@ const Header = () => {
       <TitleBar>
         <p>covid-19</p>
         <CountryPicker>
-          <img src={flag} alt="flag from picked country" />
+          <img
+            src={globe}
+            alt="flag from picked country or globe if global search"
+          />
           <Select
           // value={}
           // onChange={handleChange}
           >
-            <option value={'india'}>IND</option>
-            <option value={'global'}>GlOBAL</option>
+            <option value={'global'}>Global</option>
           </Select>
         </CountryPicker>
       </TitleBar>
