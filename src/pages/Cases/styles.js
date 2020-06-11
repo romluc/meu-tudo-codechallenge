@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const Chart = styled.div``;
-
-export const ListTypesCases = styled.div``;
-
-export const ListTypesPatients = styled.div``;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+`;

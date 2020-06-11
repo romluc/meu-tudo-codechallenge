@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
+
 import Header from '../../components/Header';
 import Chart from '../../components/Chart';
 import ListTypesCases from '../../components/ListTypesCases';
+import ListTypesPatients from '../../components/ListTypesPatients';
+import Rectangle from '../../components/Rectangle';
+
+import { Container } from './styles';
 
 import { fetchData } from '../../api';
 
-import { ListTypesPatients } from './styles';
-// const data = {
-//   labels: ['Deaths', 'Discharges', 'Active'],
-//   datasets: [
-//     {
-//       data: [70, 15, 15],
-//       backgroundColor: ['#FFC259', '#FF5959', '#55E13A'],
-//     },
-//   ],
-// };
+const dataToRender = {
+  labels: ['Active Cases', 'Discharges', 'Deaths'],
+  datasets: [
+    {
+      data: [60, 25, 15],
+      backgroundColor: ['#FFC259', '#FF5959', '#55E13A'],
+      borderWidth: 0,
+    },
+  ],
+};
 
 // const handleCountryChange = async (country) => {
 //   const fetchedData = await fetchData(country);
@@ -23,27 +28,28 @@ import { ListTypesPatients } from './styles';
 // };
 
 const Cases = () => {
-  const [data, setData] = useState({});
+  // const [data, setData] = useState({});
 
-  useEffect(() => {
-    const callFetchData = async () => {
-      const fetchedData = await fetchData();
-      setData({
-        data: fetchedData,
-        country: '',
-      });
-    };
-    callFetchData();
-  }, []);
+  // useEffect(() => {
+  //   const callFetchData = async () => {
+  //     const fetchedData = await fetchData();
+  //     setData({
+  //       data: fetchedData,
+  //       country: '',
+  //     });
+  //   };
+  //   callFetchData();
+  // }, []);
 
+  // console.log(data);
   return (
-    <>
+    <Container>
       <Header />
-      <Chart data={data.data} />
-      {}
-      {/* <ListTypesCases data={data} /> */}
+      <Chart dataToRender={dataToRender} />
+      <ListTypesCases dataToRender={dataToRender} />
       <ListTypesPatients />
-    </>
+      <Rectangle />
+    </Container>
   );
 };
 

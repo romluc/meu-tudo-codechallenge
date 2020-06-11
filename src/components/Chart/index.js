@@ -1,22 +1,30 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { Container } from './styles';
 
-// const data = {
-//   labels: ['Red', 'Green', 'Yellow'],
-//   datasets: [
-//     {
-//       data: [300, 50, 100],
-//       backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-//       hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-//     },
-//   ],
-// };
+const Chart = ({ dataToRender }) => {
+  const options = {
+    cutoutPercentage: 80,
+    legend: {
+      display: false,
+    },
+    plugins: {
+      datalabels: {
+        color: '#3C4954',
+        font: {
+          size: 20,
+          weight: 500,
+        },
+        align: 'end',
+        offset: 10,
+      },
+    },
+  };
 
-const Chart = ({ data }) => {
   return (
     <Container>
-      <Doughnut data={data} />
+      <Doughnut data={dataToRender} options={options} />
     </Container>
   );
 };

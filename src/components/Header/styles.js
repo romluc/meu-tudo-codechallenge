@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 import { lighten } from 'polished';
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+`;
+
 export const StatusBar = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 20px 32px;
+  margin: 20px 32px 0;
 
   i {
     margin-left: 5px;
@@ -29,11 +35,12 @@ export const TitleBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 24px;
+  margin: 0 24px;
 
   p {
     font-size: 30px;
     color: #3c4954;
+    font-weight: 500;
     line-height: 44px;
     text-transform: uppercase;
   }
@@ -49,6 +56,8 @@ export const Navbar = styled.ul`
   justify-content: space-between;
   align-items: center;
   list-style: none;
+  height: 44px;
+  margin: 8px 0;
 
   li {
     display: flex;
@@ -71,6 +80,8 @@ export const Navbar = styled.ul`
     a {
       text-decoration: none;
       color: #748a9d;
+      font-size: 15px;
+      line-height: 20px;
     }
   }
 `;

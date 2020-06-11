@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 import {
+  Container,
   StatusBar,
   TitleBar,
   MenuBar,
@@ -17,7 +18,7 @@ import notification from '../../assets/notification/notification.png';
 const Header = () => {
   const time = moment().format('LT');
   return (
-    <div>
+    <Container>
       <StatusBar>
         <span>{time}</span>
         <div>
@@ -54,7 +55,7 @@ const Header = () => {
           <a href="/hospitals">Hospitals</a>
         </li>
       </Navbar>
-    </div>
+    </Container>
   );
 };
 

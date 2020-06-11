@@ -1,14 +1,12 @@
 import React from 'react';
-
-import Header from '../../components/Header';
 import { Container } from './styles';
 
-const Prevention = () => {
+const Rectangle = () => {
   return (
     <Container>
-      <Header />
+      <span />
     </Container>
   );
 };
 
-export default Prevention;
+export default Rectangle;
