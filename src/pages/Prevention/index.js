@@ -20,27 +20,27 @@ const Prevention = () => {
       <Grid>
         <GridItem>
           <img src={gridItemImg1} alt="hand sanitizer" />
-          <p>asdf</p>
+          <p>Use Sanitizer</p>
         </GridItem>
         <GridItem>
           <img src={gridItemImg2} alt="person inside house" />
-          <p>asdf</p>
+          <p>Stay Isolated</p>
         </GridItem>
         <GridItem>
           <img src={gridItemImg3} alt="mask" />
-          <p>asdf</p>
+          <p>Wear Mask</p>
         </GridItem>
         <GridItem>
           <img src={gridItemImg4} alt="two people apart from each other" />
-          <p>asdf</p>
+          <p>Maintain Distance</p>
         </GridItem>
         <GridItem>
           <img src={gridItemImg5} alt="dropper" />
-          <p>asdf</p>
+          <p>Health Checkup</p>
         </GridItem>
         <GridItem>
           <img src={gridItemImg6} alt="gavel" />
-          <p>asdf</p>
+          <p>Follow Govt Rules</p>
         </GridItem>
       </Grid>
       <Text>Symptoms</Text>
@@ -55,7 +55,6 @@ const Prevention = () => {
         </div>
       </Rectangle>
       <Rectangle>
-        <img src={imgRight} alt="Person coughing" />
         <div>
           <h3>Fever</h3>
           <p>
@@ -63,6 +62,7 @@ const Prevention = () => {
             you feel warm,
           </p>
         </div>
+        <img src={imgRight} alt="Person coughing" />
       </Rectangle>
       <Indicator />
     </Container>
