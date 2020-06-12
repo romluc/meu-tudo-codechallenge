@@ -6,16 +6,22 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   background-color: #fff;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  height: 100vh;
 `;
 
+// export const ImagesContainer = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 30px 0;
+// `;
+
 export const VirusImage = styled.div`
-  position: absolute;
-  top: 30px;
   min-width: 316px;
   min-height: 373px;
   background-image: url(${virusImg});
@@ -24,10 +30,11 @@ export const VirusImage = styled.div`
 `;
 
 export const PersonImage = styled.div`
-  position: absolute;
-  top: 141px;
   min-width: 240px;
   min-height: 381px;
+  margin-top: -260px;
+  margin-bottom: 40px;
+
   background-image: url(${personImg});
   background-position: center;
   background-size: contain;
@@ -59,8 +66,9 @@ export const StyledLink = styled(Link)`
   align-items: center;
   justify-content: center;
   height: 52px;
-  width: calc(100% - 24px);
-  margin: 24px 0 40px;
+  padding: 20px 0;
+  width: calc(100% - 42px);
+  margin: 24px 0 24px;
   font-size: 15px;
   border-radius: 12px;
   background-color: #3c4954;

@@ -4,6 +4,7 @@ import {
   Container,
   PersonImage,
   VirusImage,
+  ImagesContainer,
   Title,
   Paragraph,
   StyledLink,
@@ -11,22 +12,22 @@ import {
 
 const Home = () => {
   return (
-    <div>
-      <Container>
-        <VirusImage />
-        <PersonImage />
-        <Title>Covid-19</Title>
-        <Paragraph>
-          <p>
-            Protect yourself and others around you by knowing the facts and
-            taking appropriate precautions.
-          </p>
-        </Paragraph>
-        <StyledLink to="/cases">
-          <p>Get Started</p>
-        </StyledLink>
-      </Container>
-    </div>
+    <Container>
+      {/* <ImagesContainer> */}
+      <VirusImage />
+      <PersonImage />
+      {/* </ImagesContainer> */}
+      <Title>Covid-19</Title>
+      <Paragraph>
+        <p>
+          Protect yourself and others around you by knowing the facts and taking
+          appropriate precautions.
+        </p>
+      </Paragraph>
+      <StyledLink to="/cases">
+        <p>Get Started</p>
+      </StyledLink>
+    </Container>
   );
 };
 
