@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
+
+import { fetchCountries } from '../../api';
 
 import {
   Container,
@@ -15,8 +17,19 @@ import globe from '../../assets/globe-32.png';
 import menu from '../../assets/menu/menu.png';
 import notification from '../../assets/notification/notification.png';
 
-const Header = () => {
+const Header = ({ handleCountryChange }) => {
+  const [fetchedCountries, setFetchedCountries] = useState([]);
+
   const time = moment().format('LT');
+
+  useEffect(() => {
+    const fetchedAPI = async () => {
+      setFetchedCountries(await fetchCountries());
+    };
+
+    fetchedAPI();
+  }, [setFetchedCountries]);
+
   return (
     <Container>
       <StatusBar>
@@ -34,15 +47,22 @@ const Header = () => {
       <TitleBar>
         <p>covid-19</p>
         <CountryPicker>
-          <img
-            src={globe}
-            alt="flag from picked country or globe if global search"
-          />
           <Select
-          // value={}
-          // onChange={handleChange}
+            default=""
+            onChange={(e) => handleCountryChange(e.target.value)}
           >
-            <option value={'global'}>Global</option>
+            {fetchedCountries.map((country, i) => {
+              <>
+                <img
+                  src={`https://www.countryflags.io/${country.iso2}/flat/32.png`}
+                  alt="flag from picked country or globe if global search"
+                />
+                <option value={''}>Global</option>
+                <option key={i} value={country.name}>
+                  {country.iso3}
+                </option>
+              </>;
+            })}
           </Select>
         </CountryPicker>
       </TitleBar>

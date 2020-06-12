@@ -1,11 +1,7 @@
 import React from 'react';
-import CountUp from 'react-countup';
 import { Container, ListItem } from './styles';
 
-const ListTypesCases = ({
-  dataToRender: { active, recovered, deaths },
-  colors,
-}) => {
+const ListTypesCases = ({ data: { active, recovered, deaths }, colors }) => {
   const types = ['Active Cases', 'Discharges', 'Deaths'];
   const dataFromTypes = [active, recovered, deaths];
   return (

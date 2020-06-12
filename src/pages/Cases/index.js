@@ -7,18 +7,13 @@ import ListTypesPatients from '../../components/ListTypesPatients';
 import Indicator from '../../components/Indicator';
 import Loading from '../../components/Loading';
 
-import { fetchData } from '../../api';
+import { fetchData, fetchCountries } from '../../api';
 
 import { Container } from './styles';
 
-// const handleCountryChange = async (country) => {
-//   const fetchedData = await fetchData(country);
-
-//   this.setState({ data: fetchedData, country });
-// };
-
 const Cases = () => {
   const [data, setData] = useState({});
+  const [country, setCountry] = useState({});
   const [loading, setLoading] = useState(false);
 
   const colors = ['#FFC259', '#55E13A', '#FF5959'];
@@ -33,12 +28,19 @@ const Cases = () => {
     callFetchData();
   }, []);
 
+  const handleCountryChange = async (country) => {
+    const fetchedData = await fetchData(country);
+
+    setData(fetchedData);
+    setCountry(country);
+  };
+
   return (
     <Container>
-      <Header />
+      <Header handleCountryChange={handleCountryChange} />
       {loading && <Loading />}
-      <DataChart dataToRender={data} colors={colors} />
-      <ListTypesCases dataToRender={data} colors={colors} />
+      <DataChart data={data} colors={colors} />
+      <ListTypesCases data={data} colors={colors} />
       <ListTypesPatients />
       <Indicator />
     </Container>

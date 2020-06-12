@@ -38,10 +38,10 @@ Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
 });
 
 const DataChart = ({
-  dataToRender: { confirmed, recovered, deaths, active },
+  data: { confirmed, recovered, deaths, active },
+
   colors,
 }) => {
-  console.log(colors);
   const data = {
     labels: ['Active Cases', 'Discharges', 'Deaths'],
     datasets: [
