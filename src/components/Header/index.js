@@ -32,8 +32,8 @@ const Header = ({ handleCountryChange }) => {
   }, [setFetchedCountries]);
 
   const changeFlag = (e) => {
+    // Taking only the first to letters of the country's name will emulate the country's ISO2 code, which access the flag in the api
     setFlag(e.slice(0, 2));
-    console.log(flag);
   };
 
   return (

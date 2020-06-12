@@ -22,7 +22,7 @@
 ## Futuras melhorias
 
 [ ] SSR com Next.js
-[ ] Terminar a troca de países - A parte da obtenção dos dados já está implementada, faltando apenas o tratamento desses dados para a exibição (As APIs COVID nao fornecem as bandeiras (busquei de outra api) nem os numeros por perfil de paciente (por isso a secao em que temos os casos por Male, female and children está hard-coded')
+[ ] Terminar a troca de países - A parte da obtenção dos dados já está implementada, faltando apenas o tratamento desses dados para a exibição (As APIs COVID nao fornecem as bandeiras (busquei de outra api - https://www.countryflags.io/) nem os numeros por perfil de paciente (por isso a secao em que temos os casos por Male, female and children está hard-coded')
 
 ## Submission
 
