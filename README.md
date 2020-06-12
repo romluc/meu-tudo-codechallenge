@@ -1,9 +1,14 @@
 # MEU TUDO - code challenge ✨
 ## Netlify: https://meutudo-code-challenge.netlify.app/
 
+## To test
+- `git clone` o repo
+- Rode `yarn` (ou `npm install`) para instalar as dependencias do package.json
+- E entao `yarn start` (ou `npm start`)    
+
 ## Screenshots
 
-![home](https://user-images.githubusercontent.com/44209758/84500122-4e755c80-ac8a-11ea-9085-f9133227c06f.png)
+![home](https://user-images.githubusercontent.com/44209758/84500939-f7708700-ac8b-11ea-810e-038735f6e13b.png)
 ![casesglobal](https://user-images.githubusercontent.com/44209758/84500121-4ddcc600-ac8a-11ea-87a4-dd64f9c34fd3.png)
 ![casesbrazil](https://user-images.githubusercontent.com/44209758/84500117-4cab9900-ac8a-11ea-8815-460f10e11825.png)
 ![prevention](https://user-images.githubusercontent.com/44209758/84500116-4b7a6c00-ac8a-11ea-93de-c8405da18d46.png)
