@@ -11,11 +11,6 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-
-  @media (max-width: 768px) {
-    height: 812px;
-    width: 375px;
-  }
 `;
 
 export const VirusImage = styled.div`
