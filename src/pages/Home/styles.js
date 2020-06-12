@@ -13,14 +13,6 @@ export const Container = styled.div`
   height: 100vh;
 `;
 
-// export const ImagesContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 30px 0;
-// `;
-
 export const VirusImage = styled.div`
   min-width: 316px;
   min-height: 373px;
