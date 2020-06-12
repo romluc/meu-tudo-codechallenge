@@ -110,8 +110,5 @@ export const Select = styled.select`
   margin: 0;
   border: 0;
   padding: 0;
-
-  option {
-    background-color: transparent;
-  }
+  background-color: transparent;
 `;

@@ -69,6 +69,7 @@ export const StyledLink = styled(Link)`
   font-size: 15px;
   border-radius: 12px;
   background-color: #3c4954;
+  text-decoration: none;
 
   p {
     color: #fff;
