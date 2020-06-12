@@ -35,6 +35,7 @@ export const PersonImage = styled.div`
   min-height: 381px;
   background-image: url(${personImg});
   background-position: center;
+  background-size: contain;
   background-repeat: no-repeat;
 `;
 export const Title = styled.h1`
