@@ -1,6 +1,10 @@
 # MEU TUDO - code challenge ✨
 ## Netlify: https://meutudo-code-challenge.netlify.app/
 
+---
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0bc14dfb-fa04-4227-91df-6ba2b466d7e9/deploy-status)](https://app.netlify.com/sites/meutudo-code-challenge/deploys)
+---
+
 ## To test
 - `git clone` o repo
 - Rode `yarn` (ou `npm install`) para instalar as dependencias do package.json
