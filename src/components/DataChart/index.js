@@ -56,15 +56,6 @@ const DataChart = ({
     ],
     text: confirmed,
     text2: 'Total Cases',
-    tooltips: {
-      enabled: true,
-      mode: 'single',
-      callbacks: {
-        label: function (tooltipItems, data) {
-          return tooltipItems.yLabel + '%';
-        },
-      },
-    },
   };
 
   const options = {

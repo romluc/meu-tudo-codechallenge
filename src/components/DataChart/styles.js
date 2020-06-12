@@ -7,6 +7,6 @@ export const Container = styled.div`
   margin: 0 16px;
   border-radius: 12px;
   min-height: 300px;
-  width: 340px;
+  min-width: 340px;
   box-shadow: 0 4px 16px #455b6314;
 `;
