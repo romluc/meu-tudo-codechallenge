@@ -94,6 +94,12 @@ export const CountryPicker = styled.div`
   border: 2px solid #f4f4f6;
   border-radius: 25px;
 
+  img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+
   span {
     margin: 0 4px;
   }

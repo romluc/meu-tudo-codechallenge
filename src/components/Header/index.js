@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import { fetchCountries } from '../../api';
@@ -14,11 +15,12 @@ import {
 } from './styles';
 
 import globe from '../../assets/globe-32.png';
-import menu from '../../assets/menu/menu.png';
-import notification from '../../assets/notification/notification.png';
+import menu from '../../assets/menu.png';
+import notification from '../../assets/notification.png';
 
 const Header = ({ handleCountryChange }) => {
   const [fetchedCountries, setFetchedCountries] = useState([]);
+  const [flag, setFlag] = useState('');
 
   const time = moment().format('LT');
 
@@ -26,9 +28,13 @@ const Header = ({ handleCountryChange }) => {
     const fetchedAPI = async () => {
       setFetchedCountries(await fetchCountries());
     };
-
     fetchedAPI();
   }, [setFetchedCountries]);
+
+  const changeFlag = (e) => {
+    setFlag(e.slice(0, 2));
+    console.log(flag);
+  };
 
   return (
     <Container>
@@ -47,34 +53,38 @@ const Header = ({ handleCountryChange }) => {
       <TitleBar>
         <p>covid-19</p>
         <CountryPicker>
+          {/*  */}
+          <img
+            src={
+              !flag ? globe : `https://www.countryflags.io/${flag}/flat/32.png`
+            }
+            alt="flag from picked country or globe if global search"
+          />
           <Select
             default=""
-            onChange={(e) => handleCountryChange(e.target.value)}
+            onChange={(e) => {
+              handleCountryChange(e.target.value);
+              changeFlag(e.target.value);
+            }}
           >
-            {fetchedCountries.map((country, i) => {
-              <>
-                <img
-                  src={`https://www.countryflags.io/${country.iso2}/flat/32.png`}
-                  alt="flag from picked country or globe if global search"
-                />
-                <option value={''}>Global</option>
-                <option key={i} value={country.name}>
-                  {country.iso3}
-                </option>
-              </>;
-            })}
+            <option value={''}>Global</option>
+            {fetchedCountries.map((country, i) => (
+              <option key={i} value={country.name}>
+                {country.iso3}
+              </option>
+            ))}
           </Select>
         </CountryPicker>
       </TitleBar>
       <Navbar>
         <li>
-          <a href="/cases">Cases</a>
+          <Link to="/cases">Cases</Link>
         </li>
         <li>
-          <a href="/prevention">Prevention</a>
+          <Link to="/prevention">Prevention</Link>
         </li>
         <li>
-          <a href="/">Hospitals</a>
+          <Link to="/">Hospitals</Link>
         </li>
       </Navbar>
     </Container>

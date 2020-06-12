@@ -39,7 +39,6 @@ Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
 
 const DataChart = ({
   data: { confirmed, recovered, deaths, active },
-
   colors,
 }) => {
   const data = {
@@ -57,23 +56,21 @@ const DataChart = ({
     ],
     text: confirmed,
     text2: 'Total Cases',
+    tooltips: {
+      enabled: true,
+      mode: 'single',
+      callbacks: {
+        label: function (tooltipItems, data) {
+          return tooltipItems.yLabel + '%';
+        },
+      },
+    },
   };
 
   const options = {
     cutoutPercentage: 80,
     legend: {
       display: false,
-    },
-    plugins: {
-      datalabels: {
-        color: '#3C4954',
-        font: {
-          size: 20,
-          weight: 500,
-        },
-        align: 'end',
-        offset: 10,
-      },
     },
   };
 

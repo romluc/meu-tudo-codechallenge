@@ -7,13 +7,12 @@ import ListTypesPatients from '../../components/ListTypesPatients';
 import Indicator from '../../components/Indicator';
 import Loading from '../../components/Loading';
 
-import { fetchData, fetchCountries } from '../../api';
+import { fetchData } from '../../api';
 
 import { Container } from './styles';
 
 const Cases = () => {
   const [data, setData] = useState({});
-  const [country, setCountry] = useState({});
   const [loading, setLoading] = useState(false);
 
   const colors = ['#FFC259', '#55E13A', '#FF5959'];
@@ -30,9 +29,7 @@ const Cases = () => {
 
   const handleCountryChange = async (country) => {
     const fetchedData = await fetchData(country);
-
     setData(fetchedData);
-    setCountry(country);
   };
 
   return (
